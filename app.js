@@ -6,13 +6,19 @@ const $cells = document.querySelectorAll('.game-cell');
 // Game variables
 let $gameIsLive = true;
 let $xIsNext = true;
-let $winner = null;
 let $currentUser = document.querySelector('.user')
 
 // Functions
 const updateStatus = (winner) => {
   $gameIsLive = false
   $statusDiv.innerHTML = `${winner} has won!`
+
+  $cells.forEach(cell => {
+    if (cell.classList[1] === winner) {
+      cell.classList.add('won')
+    }
+  });
+  
 }
 
 const checkGameStatus = () => {
@@ -56,13 +62,13 @@ const handleReset = () => {
   $statusDiv.innerHTML = '<span class="user">x</span> is next'
 
   $cells.forEach(cell => {
+    cell.classList.remove('won')
     cell.classList.remove(cell.classList[1])
     cell.dataset.value = ""
   })
 }
 
 const handleCellClick = (e) => {
-  // const location = e.target.dataset.id
   const classList = e.target.classList
 
   if ($gameIsLive && !e.target.dataset.value) {
@@ -77,7 +83,7 @@ const handleCellClick = (e) => {
       $currentUser.innerText = 'x'
       $xIsNext = !$xIsNext
     }
-
+    
     checkGameStatus()
   }
 

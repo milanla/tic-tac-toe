@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap');
 
-/* dark-color #0f161e */
-/* grayish b/lue #213144 */
-/* #0c6c93 */
-/* #40464d */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -106,4 +102,8 @@ body {
   font-size: 120px;
   line-height: 1;
   color: #f2ebd3;
+}
+
+.won::before {
+  color: #ff422d;
 }
