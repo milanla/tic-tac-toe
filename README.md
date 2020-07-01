@@ -5,4 +5,4 @@
 HTML, CSS, JavaScript simple tic tac toe game.
 
 
-See [live site](https://tic-tac-toe-kappa.vercel.app/).
+See [live site](https://tic-tac-toe-chi-ten.vercel.app/).
