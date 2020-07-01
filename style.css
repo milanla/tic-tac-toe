@@ -64,6 +64,24 @@ body {
   width: 64px;
   background-color: #19be98;
   cursor: pointer;
+  text-align: center;
+}
+
+.x::before {
+  content: 'x';
+  font-size: 60px;
+  line-height: 1;
+}
+
+.o::before {
+  content: 'o';
+  font-size: 60px;
+  line-height: 1;
+  color: #f2ebd3;
+}
+
+.won::before {
+  color: #ff422d;
 }
 
 @media (min-width: 600px) {
@@ -89,21 +107,9 @@ body {
     justify-content: center;
     align-self: center;
   }
-}
 
-.x::before {
-  content: 'x';
-  font-size: 120px;
-  line-height: 1;
-}
-
-.o::before {
-  content: 'o';
-  font-size: 120px;
-  line-height: 1;
-  color: #f2ebd3;
-}
-
-.won::before {
-  color: #ff422d;
+  .x::before,
+  .o::before  {
+    font-size: 120px;
+  }
 }
