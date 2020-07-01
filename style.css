@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap');
+
+/* dark-color #0f161e */
+/* grayish b/lue #213144 */
+/* #0c6c93 */
+/* #40464d */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: #324a67;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #213144;
+}
+
+.board {
+  background-color: #19be98;
+  border-radius: 15px;
+  margin: 40px;
+  padding: 40px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+}
+
+.title span {
+  color: #f2ebd3;
+}
+
+.status-action {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 16px auto 0;
+}
+
+.status {
+}
+
+.btn {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #f2ebd3;
+}
+
+.game-grid {
+  background-color: #324a67;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 4px;
+  margin-top: 32px;
+}
+
+.game-cell {
+  height: 64px;
+  width: 64px;
+  background-color: #19be98;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .status-action {
+    font-size: 20px;
+    margin-top: 32px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .game-grid {
+    grid-gap: 8px;
+  }
+
+  .game-cell {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+.x::before {
+  content: 'x';
+  font-size: 120px;
+  line-height: 1;
+}
+
+.o::before {
+  content: 'o';
+  font-size: 120px;
+  line-height: 1;
+}
