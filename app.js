@@ -43,6 +43,9 @@ const checkGameStatus = () => {
     updateStatus(topLeft)
   } else if (topRight && topRight === middleCenter && topRight === bottomLeft) {
     updateStatus(topRight)
+  } else if (topLeft && topCenter && topRight && middleLeft && middleCenter && middleRight && bottomLeft && bottomCenter && bottomRight) {
+    $gameIsLive = false
+    $statusDiv.innerHTML = `No winner! Try again`
   }
 }
 
@@ -66,6 +69,7 @@ const handleCellClick = (e) => {
     if ($xIsNext) {
       e.target.dataset.value = "x"
       classList.add("x")
+      $currentUser.innerText = 'o' 
       $xIsNext = !$xIsNext
     } else {
       e.target.dataset.value = "o"
@@ -74,7 +78,6 @@ const handleCellClick = (e) => {
       $xIsNext = !$xIsNext
     }
 
-    $currentUser.innerText = $xIsNext ? 'x' : 'o';
     checkGameStatus()
   }
 
